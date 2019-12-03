@@ -98,12 +98,12 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Avatar, new { @class = "control-label col-md-2" })
+            Avatar
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Avatar)
-                @Html.ValidationMessageFor(model => model.Avatar)
+                <input type="file" name="Avatar" id="File" multiple/>
             </div>
         </div>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.Album, new { @class = "control-label col-md-2" })

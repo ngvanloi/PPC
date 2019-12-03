@@ -50,10 +50,10 @@
                     </td>
 
                     <td>
-                        @Html.DisplayFor(modelItem => item.Avatar)
+                        <img src="~/images/@item.Avatar" width="100"/>
                     </td>
 
-
+                    
                     <td>
                         @Html.DisplayFor(modelItem => item.Property_Status.Property_Status_Name)
                     </td>
@@ -61,7 +61,6 @@
                     <td>
                         @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
                         @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-
                         @Html.ActionLink("Delete", "Delete", new { id = item.ID })
                     </td>
                 </tr>

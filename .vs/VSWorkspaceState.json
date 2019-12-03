@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\PropertyManagement",
+    "\\PropertyManagement\\Areas",
+    "\\PropertyManagement\\Areas\\Admin",
+    "\\PropertyManagement\\Areas\\Admin\\Controllers",
+    "\\PropertyManagement\\Areas\\Admin\\Views",
+    "\\PropertyManagement\\Areas\\Admin\\Views\\PropertyAdmin"
+  ],
+  "SelectedNode": "\\PropertyManagement\\Areas\\Admin\\Views\\PropertyAdmin\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

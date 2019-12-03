@@ -14,6 +14,7 @@ namespace PropertyManagement.Models
     
     public partial class Property_Status
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Property_Status()
         {
             this.Properties = new HashSet<Property>();
@@ -22,6 +23,7 @@ namespace PropertyManagement.Models
         public int ID { get; set; }
         public string Property_Status_Name { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Property> Properties { get; set; }
     }
 }

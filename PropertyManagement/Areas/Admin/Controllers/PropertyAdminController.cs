@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Web;
 using System.Web.Mvc;
 using PropertyManagement.Models;
@@ -10,7 +11,7 @@ namespace PropertyManagement.Areas.Admin.Controllers
 {
     public class PropertyAdminController : Controller
     {
-        PPCDBEntities model = new PPCDBEntities();
+        PPCDBEntities1 model = new PPCDBEntities1();
         //
         // GET: /Admin/PropertyAdmin/
         public ActionResult Index()
@@ -18,25 +19,58 @@ namespace PropertyManagement.Areas.Admin.Controllers
             var property = model.Properties.ToList();
             return View(property);
         }
-
+        [HttpGet]
         public ActionResult Create()
         {
             PopularData();
             return View();
         }
-
+        [HttpGet]
         public ActionResult Edit(int id)
         {
+
             var property = model.Properties.FirstOrDefault(x => x.ID == id);
             PopularData(property.Property_Type_ID, property.District_ID, property.Property_Status_ID);
             return View(property);
         }
 
-        [HttpPost]
-        public ActionResult Create([Bind(Include="Property_Name, Property_Type_ID, Description, District_ID, Address, Area, Bed_Room, Bath_Room, Price, Installment_Rate, Avatar, Album, Property_Status_ID")] Property property)
+        [HttpGet]
+        public ActionResult Delete(int id)
         {
+            var property = model.Properties.FirstOrDefault(x => x.ID == id);
+            return View(property);
+        }
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            var property = model.Properties.FirstOrDefault(x => x.ID == id);
+            return View(property);
+        }
+
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public ActionResult DeleteConfirm(int id)
+        {
+            var property = model.Properties.FirstOrDefault(x => x.ID == id);
+            model.Properties.Remove(property);
+            model.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Create(Property property)
+        {
+
             if (ModelState.IsValid)
             {
+                //if (file != null && file.ContentLength > 0)
+                //{
+                //    string filename = Path.GetFileName(file.FileName);
+                //    string path = Path.Combine(Server.MapPath("~/images/"), filename);
+                //    file.SaveAs(path);
+                //}
+                //property.Avatar = file.FileName;
                 model.Properties.Add(property);
                 model.SaveChanges();
                 PopularMessage(true);
@@ -45,21 +79,43 @@ namespace PropertyManagement.Areas.Admin.Controllers
             {
 
                 PopularMessage(false);
+
             }
-            return Redirect("index");
-           
+            return RedirectToAction("Index");
+
+
+
+
+        }
+        public ActionResult Image(string id)
+        {
+            var path = Server.MapPath("~/images");
+            path = System.IO.Path.Combine(path, id);
+            return File(path, "image/*");
         }
 
         [HttpPost]
-        public ActionResult Edit(Property model)
+        public ActionResult Edit(Property p, int id)
         {
-            if (ModelState.IsValid)
-            {
-                model.Entry(model).State = EntityState.Modified;
-                model.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(model);
+            var property = model.Properties.FirstOrDefault(x => x.ID == id);
+            property.Property_Name = p.Property_Name;
+            property.Property_Status_ID = p.Property_Status_ID;
+            property.Property_Type_ID = p.Property_Type_ID;
+            property.Description = p.Description;
+            property.District_ID = p.District_ID;
+            property.Address = p.Address;
+            property.Area = p.Area;
+            property.Bed_Room = p.Bed_Room;
+            property.Bath_Room = p.Bath_Room;
+            property.Price = p.Price;
+            property.Installment_Rate = p.Installment_Rate;
+            property.Avatar = p.Avatar;
+            property.Album = p.Album;
+
+
+            model.SaveChanges();
+
+            return RedirectToAction("Index");
         }
         public void PopularMessage(bool success)
         {
@@ -69,14 +125,7 @@ namespace PropertyManagement.Areas.Admin.Controllers
                 Session["success"] = "Fail!";
         }
 
-        [HttpPost]
-        public ActionResult Edit([Bind(Include = "Property_Name, Property_Type_ID, Description, District_ID, Address, Area, Bed_Room, Bath_Room, Price, Installment_Rate, Avatar, Album, Property_Status_ID")] Property property)
-        {
 
-            model.Properties.Add(property);
-            model.SaveChanges();
-            return Redirect("index");
-        }
 
 
         public void PopularData(object propertyTypeSelected = null, object districtSelected = null, object propertyStatusSelected = null)
@@ -87,6 +136,6 @@ namespace PropertyManagement.Areas.Admin.Controllers
 
         }
 
-       
-	}
+
+    }
 }

@@ -14,6 +14,7 @@ namespace PropertyManagement.Models
     
     public partial class Service
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Service()
         {
             this.Property_Service = new HashSet<Property_Service>();
@@ -22,6 +23,7 @@ namespace PropertyManagement.Models
         public int ID { get; set; }
         public string Service_Name { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Property_Service> Property_Service { get; set; }
     }
 }

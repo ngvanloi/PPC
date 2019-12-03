@@ -1,0 +1,87 @@
+*{margin: 0;padding: 0;}
+body,html{
+  background-color: #a9d7d1;
+}
+#title,#description{
+  text-align: center;
+}
+.main{
+  background-color:#fff;
+  margin: 0 auto;
+  border-radius: 4px;
+  width: 75%;
+  max-width: 900px;
+}
+#description{
+
+}
+.labels{
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+  vertical-align: top;
+  margin-top: 10px;
+  padding: 5px;
+}
+.rightTab{
+  display: inline-block;
+  width: 48%;
+  vertical-align: middle;
+  margin: 10px;
+
+}
+.input-field{
+  padding: 5px;
+  width: 280px;
+  height: 20px;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+}
+.dropdown{
+padding: 5px;
+}
+.radio,.checkbox{
+
+  padding-bottom: 10px;
+  display: block;
+}
+.userRatings{
+  float: left;
+  margin-right: 5px;
+}
+#submit{
+    display: block;
+  width: 80px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  margin: auto;
+  margin-bottom: 35px;
+
+}
+@media screen and (max-width:833px){
+  .input-field{
+    width: 80%;
+  }
+  select{
+    width: 90%;
+  }
+}
+@media screen and (max-width:520px){
+  .rightTab{
+    width:80%;
+  }
+  .input-field{
+    width:100%;
+
+  }
+  .labels{
+    text-align: left;
+    width: 100%;
+  }
+  select{
+    width: 100%;
+  }
+}

@@ -17,14 +17,7 @@
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Property_Code, new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Property_Code)
-                @Html.ValidationMessageFor(model => model.Property_Code)
-            </div>
-        </div>
+g
 
         <div class="form-group">
             @Html.LabelFor(model => model.Property_Name, new { @class = "control-label col-md-2" })

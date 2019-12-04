@@ -11,7 +11,7 @@ namespace PropertyManagement.Areas.Admin.Controllers
 {
     public class PropertyAdminController : Controller
     {
-        PPCDBEntities1 model = new PPCDBEntities1();
+        PPCDBEntities2 model = new PPCDBEntities2();
         //
         // GET: /Admin/PropertyAdmin/
         public ActionResult Index()

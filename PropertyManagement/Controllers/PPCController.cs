@@ -9,7 +9,7 @@ namespace PropertyManagement.Controllers
 {
     public class PPCController : Controller
     {
-        PPCDBEntities1 db = new PPCDBEntities1();
+        PPCDBEntities2 db = new PPCDBEntities2();
 
         // GET: PPC
         [HttpGet]

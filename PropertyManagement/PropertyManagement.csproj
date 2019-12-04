@@ -242,16 +242,6 @@
     <Content Include="images\PPCLogo-128-128.png" />
     <Content Include="images\PPCLogo.png" />
     <Content Include="images\user2-160x160.jpg" />
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
@@ -266,13 +256,6 @@
     <Content Include="Areas\Admin\Views\PropertyAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\PropertyAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\PropertyAdmin\Edit.cshtml" />
-    <EntityDeploy Include="Models\Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\PropertyAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\PropertyAdmin\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\FullContractAdmin\Index.cshtml" />
@@ -285,6 +268,23 @@
     <Content Include="Areas\Admin\Views\InstallmentContractAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\InstallmentContractAdmin\Print.cshtml" />
     <Content Include="Areas\Admin\Views\FullContractAdmin\Print.cshtml" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\dataTables.bootstrap4.js" />
     <Content Include="Scripts\demo.js" />

@@ -10,7 +10,7 @@ namespace PropertyManagement.Areas.Admin.Controllers
 {
     public class FullContractAdminController : Controller
     {
-        PPCDBEntities1 model = new PPCDBEntities1();
+        PPCDBEntities2 model = new PPCDBEntities2();
         // GET: Admin/FullContractAdmin
         public ActionResult Index()
         {

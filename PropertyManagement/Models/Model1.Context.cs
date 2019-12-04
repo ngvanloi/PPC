@@ -13,10 +13,10 @@ namespace PropertyManagement.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PPCDBEntities1 : DbContext
+    public partial class PPCDBEntities2 : DbContext
     {
-        public PPCDBEntities1()
-            : base("name=PPCDBEntities1")
+        public PPCDBEntities2()
+            : base("name=PPCDBEntities2")
         {
         }
     

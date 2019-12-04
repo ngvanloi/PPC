@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="PPCDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="PPCDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="City">
     <Key>
       <PropertyRef Name="ID" />
@@ -203,7 +203,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="PPCDBEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="PPCDBEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Cities" EntityType="Self.City" />
     <EntitySet Name="Districts" EntityType="Self.District" />
     <EntitySet Name="Full_Contract" EntityType="Self.Full_Contract" />

@@ -178,6 +178,7 @@
     <Compile Include="Models\City.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FullContractPrintModel.cs" />
     <Compile Include="Models\District.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -340,6 +341,7 @@
     <Content Include="webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\PPC\Details.cshtml" />
+    <Content Include="webfonts\SourceSansPro-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,7 +23,7 @@ namespace PropertyManagement.Areas.Admin.Controllers
         public ActionResult Create()
         {
             PopularData();
-            
+
             return View();
         }
         [HttpGet]
@@ -38,7 +38,27 @@ namespace PropertyManagement.Areas.Admin.Controllers
         public ActionResult Print(int id)
         {
             var fullContract = model.Full_Contract.FirstOrDefault(x => x.ID == id);
-            return View(fullContract);
+            if (fullContract != null)
+            {
+                FullContractPrintModel fc = new FullContractPrintModel();
+                fc.Ful_contract_Code = fullContract.Full_Contract_Code;
+                fc.Customer_Name = fullContract.Customer_Name;
+                fc.Customer_Address = fullContract.Customer_Address;
+                fc.Date_of_Contract = fullContract.Date_Of_Contract;
+                fc.Deposit = fullContract.Deposit;
+                fc.Price = fullContract.Price;
+                fc.SSN = fullContract.SSN;
+                fc.Mobile = fullContract.Mobile;
+
+                fc.Property_Code = fullContract.Property.Property_Code;
+                fc.Address = fullContract.Property.Address;
+                return View(fullContract);
+            }
+            else
+            {
+                return View();
+            }
+            
         }
         [HttpGet]
         public ActionResult Details(int id)
@@ -71,16 +91,16 @@ namespace PropertyManagement.Areas.Admin.Controllers
         {
             var fullContract = model.Full_Contract.FirstOrDefault(x => x.ID == id);
             fullContract.Customer_Name = p.Customer_Name;
-            fullContract.Year_Of_Birth= p.Year_Of_Birth;
-            fullContract.SSN= p.SSN;
+            fullContract.Year_Of_Birth = p.Year_Of_Birth;
+            fullContract.SSN = p.SSN;
             fullContract.Customer_Address = p.Customer_Address;
-            fullContract.Mobile= p.Mobile;
-            fullContract.Property_ID= p.Property_ID;
-            fullContract.Date_Of_Contract= p.Date_Of_Contract;
-            fullContract.Price= p.Price;
-            fullContract.Deposit= p.Deposit;
+            fullContract.Mobile = p.Mobile;
+            fullContract.Property_ID = p.Property_ID;
+            fullContract.Date_Of_Contract = p.Date_Of_Contract;
+            fullContract.Price = p.Price;
+            fullContract.Deposit = p.Deposit;
             fullContract.Remain = p.Remain;
-            fullContract.Status= p.Status;
+            fullContract.Status = p.Status;
 
             model.SaveChanges();
 

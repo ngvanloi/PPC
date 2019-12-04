@@ -186,6 +186,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InstallmentContactPrintModel.cs" />
     <Compile Include="Models\Installment_Contract.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

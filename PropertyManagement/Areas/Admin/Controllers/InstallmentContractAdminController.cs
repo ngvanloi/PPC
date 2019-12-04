@@ -36,8 +36,30 @@ namespace PropertyManagement.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Print(int id)
         {
-            var installmentContract = model.Installment_Contract.FirstOrDefault(x => x.ID == id);
-            return View(installmentContract);
+            var install  = model.Installment_Contract.FirstOrDefault(x => x.ID == id);
+            if (install != null)
+            {
+                InstallmentContactPrintModel fc = new InstallmentContactPrintModel();
+                fc.Installment_Contact_Code = install.Installment_Contract_Code;
+                fc.Customer_Name = install.Customer_Name;
+                fc.Customer_Address = install.Customer_Address;
+                fc.Date_of_Contract = install.Date_Of_Contract;
+                fc.Deposit = install.Deposit;
+                fc.Price = install.Price;
+                fc.SSN = install.SSN;
+                fc.Mobile = install.Mobile;
+                fc.Loan_Amount= install.Loan_Amount;
+                 fc.Payment_Period = install.Payment_Period;
+                 fc.Taken =  install.Taken;
+
+                fc.Property_Code = install.Property.Property_Code;
+                fc.Address = install.Property.Address;
+                return View(fc);
+            }
+            else
+            {
+                return View();
+            }
         }
         [HttpGet]
         public ActionResult Details(int id)

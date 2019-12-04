@@ -34,7 +34,6 @@ namespace PropertyManagement.Areas.Admin.Controllers
             return View(fullContract);
         }
 
-        [HttpGet]
         public ActionResult Print(int id)
         {
             var fullContract = model.Full_Contract.FirstOrDefault(x => x.ID == id);
@@ -52,7 +51,7 @@ namespace PropertyManagement.Areas.Admin.Controllers
 
                 fc.Property_Code = fullContract.Property.Property_Code;
                 fc.Address = fullContract.Property.Address;
-                return View(fullContract);
+                return View(fc);
             }
             else
             {
@@ -60,12 +59,7 @@ namespace PropertyManagement.Areas.Admin.Controllers
             }
             
         }
-        [HttpGet]
-        public ActionResult Details(int id)
-        {
-            var fullContract = model.Full_Contract.FirstOrDefault(x => x.ID == id);
-            return View(fullContract);
-        }
+      
 
 
         [HttpPost]

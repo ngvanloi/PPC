@@ -6,13 +6,11 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using System.ComponentModel.DataAnnotations;
 namespace PropertyManagement.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.Collections.Generic;
-    
     public partial class Property
     {
         public Property()
@@ -23,11 +21,19 @@ namespace PropertyManagement.Models
     
         public int ID { get; set; }
         public string Property_Code { get; set; }
+        [Required(ErrorMessage="Please enter Property name")]
+        [StringLength(50)]
         public string Property_Name { get; set; }
+        
         public int Property_Type_ID { get; set; }
+        [Required(ErrorMessage = "Please enter Description")]
+        [StringLength(500)]
         public string Description { get; set; }
         public int District_ID { get; set; }
+        
         public string Address { get; set; }
+        [Required(ErrorMessage = "Please enter Area")]
+        [Range(1,200)]
         public Nullable<int> Area { get; set; }
         public Nullable<int> Bed_Room { get; set; }
         public Nullable<int> Bath_Room { get; set; }
@@ -42,6 +48,5 @@ namespace PropertyManagement.Models
         public virtual ICollection<Installment_Contract> Installment_Contract { get; set; }
         public virtual Property_Status Property_Status { get; set; }
         public virtual Property_Type Property_Type { get; set; }
-
     }
 }

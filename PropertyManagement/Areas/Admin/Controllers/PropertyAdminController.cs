@@ -59,36 +59,25 @@ namespace PropertyManagement.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Property property, HttpPostedFileBase upload)
+        public ActionResult Create([Bind(Include=" Property_Name, Property_Type_ID, Description, District_ID, Address, Area, Bed_Room, Bath_Room, Price, Installment_Rate, Avatar, Album, Property_Status_ID")] Property property)
         {
 
+            
             if (ModelState.IsValid)
             {
-                //if (upload != null && upload.ContentLength > 0)
-                //{
-                //    var avatar = new PropertyManagement.Models.File
-                //    {
-                //        FileName = System.IO.Path.GetFileName(upload.FileName),
-                //        FileType = FileType.Avatar,
-                //        ContentType = upload.ContentType
-                //    };
-                //    using (var reader = new System.IO.BinaryReader(upload.InputStream))
-                //    {
-                //        avatar.Content = reader.ReadBytes(upload.ContentLength);
-                //    }
-                //    property.Avatar = new List<PropertyManagement.Models.File> { avatar };
-                //}
                 model.Properties.Add(property);
                 model.SaveChanges();
                 PopularMessage(true);
+                return RedirectToAction("Index");
             }
             else
             {
-
-                PopularMessage(false);
+                PopularData();
+                return View();
 
             }
-            return RedirectToAction("Index");
+            
+           
 
 
 

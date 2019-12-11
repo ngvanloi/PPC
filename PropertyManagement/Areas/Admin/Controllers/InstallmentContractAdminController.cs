@@ -61,12 +61,7 @@ namespace PropertyManagement.Areas.Admin.Controllers
                 return View();
             }
         }
-        [HttpGet]
-        public ActionResult Details(int id)
-        {
-            var installmentContract = model.Installment_Contract.FirstOrDefault(x => x.ID == id);
-            return View(installmentContract);
-        }
+
 
        
 

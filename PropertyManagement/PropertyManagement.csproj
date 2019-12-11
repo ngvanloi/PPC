@@ -263,11 +263,9 @@
     <Content Include="Areas\Admin\Views\FullContractAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\FullContractAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\FullContractAdmin\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\FullContractAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\InstallmentContractAdmin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\InstallmentContractAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\InstallmentContractAdmin\Edit.cshtml" />
-    <Content Include="Areas\Admin\Views\InstallmentContractAdmin\Details.cshtml" />
     <Content Include="Areas\Admin\Views\InstallmentContractAdmin\Print.cshtml" />
     <Content Include="Areas\Admin\Views\FullContractAdmin\Print.cshtml" />
     <EntityDeploy Include="Models\Model1.edmx">

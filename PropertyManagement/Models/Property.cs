@@ -11,6 +11,7 @@ namespace PropertyManagement.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.Generic;
     
     public partial class Property
     {
@@ -41,5 +42,6 @@ namespace PropertyManagement.Models
         public virtual ICollection<Installment_Contract> Installment_Contract { get; set; }
         public virtual Property_Status Property_Status { get; set; }
         public virtual Property_Type Property_Type { get; set; }
+
     }
 }

@@ -59,18 +59,25 @@ namespace PropertyManagement.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Property property)
+        public ActionResult Create(Property property, HttpPostedFileBase upload)
         {
 
             if (ModelState.IsValid)
             {
-                //if (file != null && file.ContentLength > 0)
+                //if (upload != null && upload.ContentLength > 0)
                 //{
-                //    string filename = Path.GetFileName(file.FileName);
-                //    string path = Path.Combine(Server.MapPath("~/images/"), filename);
-                //    file.SaveAs(path);
+                //    var avatar = new PropertyManagement.Models.File
+                //    {
+                //        FileName = System.IO.Path.GetFileName(upload.FileName),
+                //        FileType = FileType.Avatar,
+                //        ContentType = upload.ContentType
+                //    };
+                //    using (var reader = new System.IO.BinaryReader(upload.InputStream))
+                //    {
+                //        avatar.Content = reader.ReadBytes(upload.ContentLength);
+                //    }
+                //    property.Avatar = new List<PropertyManagement.Models.File> { avatar };
                 //}
-                //property.Avatar = file.FileName;
                 model.Properties.Add(property);
                 model.SaveChanges();
                 PopularMessage(true);
